@@ -1,14 +1,11 @@
-var cloze = require("./clozeCard");
-var basic = require("./basicCard.js");
+var ClozeCard = require("./clozeCard");
+var BasicCard = require("./basicCard");
+var inquirer = require("inquirer");
 
-// var ClozeCard = function(text, partial, cloze){
-// 	this.cloze = cloze;
-// 	this.partial = partial;
-// 	this.fullText = text;
-// };
+module.exports = BasicCard;
 
-var washington = new ClozeCard("George Washinton was the first president of the united states.", "was the first president of the united states", "George Washinton");
-console.log(washington.cloze);
+var washington = new ClozeCard("George Washinton was the first president of the united states.", "was the first president of the united states.", "George Washinton");
+console.log(washington.partial);
 
 
 module.exports = ClozeCard();
@@ -24,5 +21,9 @@ var create = function(arg1, arg2){
 		break;
 	}
 };
+
+function createCloze(){
+
+}
 
 create(process.argv[2], process.argv[3]);
